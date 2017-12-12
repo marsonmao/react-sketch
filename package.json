@@ -1,6 +1,6 @@
 {
   "name": "react-sketch",
-  "version": "0.4.100",
+  "version": "0.4.101",
   "description": "Sketch Element for React based applications, backed-up by fabricjs as its core",
   "keywords": [
     "react",
@@ -28,6 +28,7 @@
     "build": "NODE_ENV=production webpack --config webpack.library.cfg.js --display-modules",
     "build:light": "babel ./src --out-dir ./lib",
     "build:examples": "NODE_ENV=production webpack --config webpack.examples.cfg.js",
+	"preinstall": "npm run build",
     "prepublish": "npm run test && npm run build",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
