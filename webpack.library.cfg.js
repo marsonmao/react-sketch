@@ -4,6 +4,8 @@ var path = require('path');
 
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const NoEmitOnErrorsPlugin = require('webpack/lib/NoEmitOnErrorsPlugin');
+const OccurrenceOrderPlugin = require('webpack/lib/optimize/OccurrenceOrderPlugin');
 const AggressiveMergingPlugin = require('webpack/lib/optimize/AggressiveMergingPlugin');
 
 const srcPath = path.join(__dirname, 'src');
@@ -57,6 +59,8 @@ module.exports = {
                 warnings: false
             }
         }),
+        new NoEmitOnErrorsPlugin(),
+        new OccurrenceOrderPlugin(),
         new AggressiveMergingPlugin(),
         new DefinePlugin({
             'process.env': {
