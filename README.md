@@ -1,3 +1,7 @@
+# Special need (marsonmao)
+
+`npm run build` to generate new `./lib/index.js` before releasing new tag
+
 # react-sketch
 
 [![GitHub release][github-image]][github-url]

@@ -550,7 +550,9 @@ class SketchField extends PureComponent {
             className,
             style,
             width,
-            height
+            height,
+            viewComponent: View,
+            canvasComponent: Canvas
         } = this.props;
 
         let canvasDivStyle = Object.assign({}, style ? style : {},
@@ -558,17 +560,17 @@ class SketchField extends PureComponent {
             height ? {height: height} : {height: 512});
 
         return (
-            <div
+            <View
                 className={className}
                 ref={(c) => this._container = c}
                 style={canvasDivStyle}>
-                <canvas
+                <Canvas
                     id={uuid4()}
                     ref={(c) => this._canvas = c}>
                     Sorry, Canvas HTML5 element is not supported by your browser
                     :(
-                </canvas>
-            </div>
+                </Canvas>
+            </View>
         )
     }
 }
